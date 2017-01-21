@@ -20,4 +20,6 @@ matrix:
 install:
   - if [[ $DJANGO_VERSION != 'master' ]]; then pip install django~=$DJANGO_VERSION; else pip install -e git://github.com/django/django.git#egg=Django; fi
   - pip install .
-script: ./test_project/manage.py test
+script:
+    - django-admin --version
+    - ./test_project/manage.py test
